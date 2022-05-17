@@ -1,8 +1,8 @@
 FROM node:alpine
 
-WORKDIR /
+WORKDIR /api
 
-COPY ["package.json" , "."]
+COPY ["package.json*" , "."]
 RUN npm install 
 
 COPY . .
