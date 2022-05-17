@@ -10,8 +10,6 @@ COPY package.json ./
 COPY package-lock.json ./
 RUN npm install 
 
-
-
 # Copy app file
 COPY . ./
 # Expose port
