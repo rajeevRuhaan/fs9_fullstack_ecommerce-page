@@ -1,4 +1,4 @@
-FROM node:16.13.2
+FROM node:alpine3.14
 
 WORKDIR /api
 
@@ -8,6 +8,6 @@ COPY package-lock.json ./
 RUN npm install 
 
 # Copy app file
-COPY . .
+COPY . ./
 
 CMD ["node", "dist/server.js"]

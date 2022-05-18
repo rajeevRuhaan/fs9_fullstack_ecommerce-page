@@ -2,14 +2,14 @@ version: "3"
 services:
   mongo:
     image: mongo
-    restart: unless-stopped
-    environment:
-     MONGO_INITDB_ROOT_USERNAME: root
-     MONGO_INITDB_ROOT_PASSWORD: root
-     MONGO_REPLICA_HOST: localhost
-     MONGO_REPLICA_PORT: 27017
+    # environment:
+    #  MONGO_INITDB_ROOT_USERNAME: root
+    #  MONGO_INITDB_ROOT_PASSWORD: root
+    #  MONGO_REPLICA_HOST: localhost
+    #  MONGO_REPLICA_PORT: 27017
     ports:
-      - '27017:27017'
+      - 27017:27017
+    restart: always
   backend:
     build:
       context: ./api
@@ -17,7 +17,9 @@ services:
     depends_on:
       - mongo
     ports:
-      - 5000:5000    
+      - 5000:5000
+    networks:
+      - app-network    
   frontend:
     build:
       context: ./client
@@ -26,6 +28,8 @@ services:
       - backend
     ports:
       - 3000:3000
+    networks:
+      - app-network
 volumes:
    mongo-data:
     driver: local

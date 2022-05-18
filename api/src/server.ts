@@ -6,7 +6,7 @@ import { MONGODB_URI } from './util/secrets'
 import logger from './util/logger'
 
 const mongoUrl = MONGODB_URI
-
+console.log('mongo UR L:', mongoUrl)
 mongoose
   .connect(mongoUrl, {
     useNewUrlParser: true,

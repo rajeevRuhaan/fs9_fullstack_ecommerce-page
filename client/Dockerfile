@@ -1,5 +1,5 @@
 # pull official base image
-FROM node:alpine
+FROM node:alpine3.14
 ENV NODE_ENV development
 
 # set working directory 
@@ -8,7 +8,7 @@ WORKDIR /client
 # add app dependencies
 COPY package.json ./
 COPY package-lock.json ./
-RUN npm install 
+RUN npm install
 
 # Copy app file
 COPY . ./
