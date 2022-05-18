@@ -9,6 +9,7 @@ const app_1 = __importDefault(require("./app"));
 const secrets_1 = require("./util/secrets");
 const logger_1 = __importDefault(require("./util/logger"));
 const mongoUrl = secrets_1.MONGODB_URI;
+console.log('mongo UR L:', mongoUrl);
 mongoose_1.default
     .connect(mongoUrl, {
     useNewUrlParser: true,
