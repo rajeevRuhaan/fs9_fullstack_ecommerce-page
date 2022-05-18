@@ -9,5 +9,6 @@ RUN npm install
 
 # Copy app file
 COPY . ./
+RUN npm build
 
 CMD ["node", "dist/server.js"]
