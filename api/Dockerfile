@@ -6,7 +6,12 @@ WORKDIR /api
 COPY package.json ./
 COPY package-lock.json ./
 RUN npm install 
-ADD .github/workspace/.env /api
+
+# RUN touch .env
+RUN echo $First_Name
+# ADD $First_Name /api/.env
+# RUN ls
+COPY .env ./api/
 # Copy app file
 COPY . ./
 RUN npm run build
