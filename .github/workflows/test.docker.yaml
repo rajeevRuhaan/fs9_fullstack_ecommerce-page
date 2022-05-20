@@ -37,12 +37,12 @@ jobs:
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
-        # env:
-        #   MONGODB_URI: ${{secrets.MONGODB_URI}}
-        #   MONGODB_URI_LOCAL: ${{secrets.MONGODB_URI_LOCAL}}
-        #   JWT_SECRET: ${{secrets.JWT_SECRET}}
-        #   JWT_EXPIRES_IN: ${{secrets.JWT_EXPIRES_IN}}
-        #   GOOGLE_CLIENT_ID: ${{secrets.GOOGLE_CLIENT_ID}}
+        env:
+          MONGODB_URI: ${{secrets.MONGODB_URI}}
+          MONGODB_URI_LOCAL: ${{secrets.MONGODB_URI_LOCAL}}
+          JWT_SECRET: ${{secrets.JWT_SECRET}}
+          JWT_EXPIRES_IN: ${{secrets.JWT_EXPIRES_IN}}
+          GOOGLE_CLIENT_ID: ${{secrets.GOOGLE_CLIENT_ID}}
       -
         name: Build and push backend
         uses: docker/build-push-action@v3    

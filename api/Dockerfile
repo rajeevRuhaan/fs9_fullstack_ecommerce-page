@@ -6,7 +6,7 @@ WORKDIR /api
 COPY package.json ./
 COPY package-lock.json ./
 RUN npm install 
-RUN /github/workspace/.env
+RUN .env
 # Copy app file
 COPY . ./
 RUN npm run build
