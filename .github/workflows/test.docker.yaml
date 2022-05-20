@@ -21,13 +21,13 @@ jobs:
           file_name: .env
       -
         name: display1 folder structure
-        run: ls -la
+        run: cat .env
       -
         name: Checkout 
         uses: actions/checkout@v2
       -
         name: display2 folder structure
-        run: cat .env
+        run: ls 
       - 
         name: Login to Dockerhub
         uses: docker/login-action@v2
