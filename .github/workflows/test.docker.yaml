@@ -11,18 +11,29 @@ jobs:
     steps:
       -
         name: Checkout 
-        uses: actions/checkout@v2 
+        uses: actions/checkout@v2
       -
-        name: Create .env file
-        uses: SpicyPizza/create-envfile@v1
-        with:
-          envkey_MONGODB_URI: ${{secrets.MONGODB_URI}}
-          envkey_MONGODB_URI_LOCAL: ${{secrets.MONGODB_URI_LOCAL}}
-          envkey_JWT_SECRET: ${{secrets.JWT_SECRET}}
-          envkey_JWT_EXPIRES_IN: ${{secrets.JWT_EXPIRES_IN}}
-          envkey_GOOGLE_CLIENT_ID: ${{secrets.GOOGLE_CLIENT_ID}}
-          file_name: .env
-          directory: ${{github.workspace}}
+        name: Create env file
+        run: |
+          touch .env
+          echo MONGODB_URI=${{secrets.MONGODB_URI}} >> .env
+          echo MONGODB_URI_LOCAL: ${{secrets.MONGODB_URI_LOCAL}} >> .env
+          echo JWT_SECRET: ${{secrets.JWT_SECRET}} >> .echo
+          echo JWT_EXPIRES_IN: ${{secrets.JWT_EXPIRES_IN}} >> .env
+          echo GOOGLE_CLIENT_ID: ${{secrets.GOOGLE_CLIENT_ID}} >> .env
+          cat .env
+      - run: ls 
+      # -
+      #   name: Create .env file
+      #   uses: SpicyPizza/create-envfile@v1
+      #   with:
+      #     envkey_MONGODB_URI: ${{secrets.MONGODB_URI}}
+      #     envkey_MONGODB_URI_LOCAL: ${{secrets.MONGODB_URI_LOCAL}}
+      #     envkey_JWT_SECRET: ${{secrets.JWT_SECRET}}
+      #     envkey_JWT_EXPIRES_IN: ${{secrets.JWT_EXPIRES_IN}}
+      #     envkey_GOOGLE_CLIENT_ID: ${{secrets.GOOGLE_CLIENT_ID}}
+      #     file_name: .env
+      #     directory: ${{github.workspace}}
       - 
         name: Login to Dockerhub
         uses: docker/login-action@v2
