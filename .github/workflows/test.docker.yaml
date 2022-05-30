@@ -12,6 +12,7 @@ jobs:
       -
         name: Checkout 
         uses: actions/checkout@v2
+      - run: ls -la
       -
         name: Create env file
         run: |
@@ -22,7 +23,9 @@ jobs:
           echo JWT_EXPIRES_IN: ${{secrets.JWT_EXPIRES_IN}} >> .env
           echo GOOGLE_CLIENT_ID: ${{secrets.GOOGLE_CLIENT_ID}} >> .env
           cat .env
-      - run: ls 
+       
+
+      - run: ls -la
       # -
       #   name: Create .env file
       #   uses: SpicyPizza/create-envfile@v1
