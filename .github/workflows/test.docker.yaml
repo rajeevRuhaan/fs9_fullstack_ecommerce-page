@@ -17,7 +17,7 @@ jobs:
       -
         name: Create env file
         run: |
-          touch .env
+          touch /home/runner/work/fs9-fullstack-project/fs9-fullstack-project/api/.env
           echo MONGODB_URI=${{secrets.MONGODB_URI}} >> .env
           echo MONGODB_URI_LOCAL=${{secrets.MONGODB_URI_LOCAL}} >> .env
           echo JWT_SECRET=${{secrets.JWT_SECRET}} >> .env
@@ -25,6 +25,9 @@ jobs:
           echo GOOGLE_CLIENT_ID=${{secrets.GOOGLE_CLIENT_ID}} >> .env
           cat .env
       - run: ls -la
+      - run: |
+          cd api
+          ls -la
       # -
       #   name: Create .env file
       #   uses: SpicyPizza/create-envfile@v1

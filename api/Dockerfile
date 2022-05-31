@@ -7,8 +7,6 @@ COPY package.json ./
 COPY package-lock.json ./
 RUN npm install 
 
-RUN pwd
-RUN ls -la
 COPY /.env ./api/
 # Copy app file
 COPY . ./
