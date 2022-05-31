@@ -11,6 +11,7 @@ COPY /.env ./api/
 # Copy app file
 COPY . ./
 RUN ls -la
+RUN cat .env
 RUN npm run build
 
 CMD ["node", "dist/server.js"]
