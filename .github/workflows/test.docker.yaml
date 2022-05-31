@@ -25,7 +25,8 @@ jobs:
           echo GOOGLE_CLIENT_ID=${{secrets.GOOGLE_CLIENT_ID}} >> .env
           cat .env
       - run: ls -la
-      - run: pwd
+      - run: cd api
+      - run: ls -la
       # -
       #   name: Create .env file
       #   uses: SpicyPizza/create-envfile@v1
