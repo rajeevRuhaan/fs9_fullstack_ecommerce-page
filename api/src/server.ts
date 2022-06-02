@@ -10,7 +10,7 @@ dotenv.config({ path: '.env' })
 
 // const mongoUrl = MONGODB_URI
 
-const mongoUrl = `mongodb://fs9-fullstack:${process.env.PASSWORD}@cluster0-shard-00-00.kienc.mongodb.net:27017,cluster0-shard-00-01.kienc.mongodb.net:27017,cluster0-shard-00-02.kienc.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-bq83u0-shard-0&authSource=admin&retryWrites=true&w=majority`
+const mongoUrl = `mongodb://fs9-fullstack:${process.env.MONGO}@cluster0-shard-00-00.kienc.mongodb.net:27017,cluster0-shard-00-01.kienc.mongodb.net:27017,cluster0-shard-00-02.kienc.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-bq83u0-shard-0&authSource=admin&retryWrites=true&w=majority`
 mongoose
   .connect(mongoUrl, {
     useNewUrlParser: true,

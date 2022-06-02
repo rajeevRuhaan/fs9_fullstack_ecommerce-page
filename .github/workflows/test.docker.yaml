@@ -22,7 +22,7 @@ jobs:
           echo JWT_SECRET=${{secrets.JWT_SECRET}} >> .env
           echo JWT_EXPIRES_IN=${{secrets.JWT_EXPIRES_IN}} >> .env
           echo GOOGLE_CLIENT_ID=${{secrets.GOOGLE_CLIENT_ID}} >> .env
-          echo PASSWORD=${{secrets.PASSWORD}} >> .env
+          echo MONGO=${{secrets.PASSWORD}} >> .env
           cat .env
       - run: ls -la
       - run: |
