@@ -15,7 +15,19 @@ jobs:
       - run: ls -la
       - run: pwd
       -
-        name: Create env file
+        name: Create env file inside client
+        run: |
+          cd client
+          touch .env
+          echo REACT_APP_BACKEND=${{secrets.REACT_APP_BACKEND}} >> .env
+          cat .env
+      - run: ls -la
+      - run: |
+          cd client
+          ls -la
+          cat .env
+      -
+        name: Create env file inside API
         run: |
           cd api
           touch .env
