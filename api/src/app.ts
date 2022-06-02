@@ -39,7 +39,7 @@ app.use('/api/v1/category', categoryRouter)
 app.use('/api/v1/color', colorRouter)
 app.use('/api/v1/profile', profileRouter)
 app.use('/api/v1/order', orderRouter)
-// some comment
+
 // Custom API error handler
 app.use(apiErrorHandler)
 
