@@ -5,11 +5,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const errorhandler_1 = __importDefault(require("errorhandler"));
 const mongoose_1 = __importDefault(require("mongoose"));
+const dotenv_1 = __importDefault(require("dotenv"));
 const app_1 = __importDefault(require("./app"));
-const secrets_1 = require("./util/secrets");
+//import { MONGODB_URI } from './util/secrets'
 const logger_1 = __importDefault(require("./util/logger"));
-const mongoUrl = secrets_1.MONGODB_URI;
-console.log('mongo UR L:', mongoUrl);
+dotenv_1.default.config({ path: '.env' });
+// const mongoUrl = MONGODB_URI
+const mongoUrl = `mongodb://fs9-fullstack:${process.env.MONGO}@cluster0-shard-00-00.kienc.mongodb.net:27017,cluster0-shard-00-01.kienc.mongodb.net:27017,cluster0-shard-00-02.kienc.mongodb.net:27017/myFirstDatabase?ssl=true&replicaSet=atlas-bq83u0-shard-0&authSource=admin&retryWrites=true&w=majority`;
 mongoose_1.default
     .connect(mongoUrl, {
     useNewUrlParser: true,

@@ -20,7 +20,7 @@ const passport_2 = require("./config/passport");
 dotenv_1.default.config({ path: '.env' });
 const app = express_1.default();
 // Express configuration
-app.set('port', process.env.PORT || 8000);
+app.set('port', process.env.PORT || 5000);
 // Global middleware
 app.use(cors_1.default());
 app.use(apiContentType_1.default);
