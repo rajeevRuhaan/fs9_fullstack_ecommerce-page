@@ -14,6 +14,7 @@ jobs:
         working-directory:  api
     steps:
       # checks-out git repo and access it
+      - run: echo "test api "
       - name: Checking out
         uses: actions/checkout@v3
       - name: Viewing folder structure after checks-out
