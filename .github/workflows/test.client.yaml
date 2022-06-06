@@ -2,10 +2,10 @@ name: test.client
 on:
   push:
     branches:
-      - develop
+      - develop_account_page
   pull_request:
     branches:
-      - develop
+      - develop_account_page
 jobs:
   build:
     runs-on: ubuntu-latest
