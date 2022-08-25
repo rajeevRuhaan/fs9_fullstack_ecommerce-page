@@ -1,4 +1,5 @@
 # Fullstack-Typescript-Project
+(This project was forked from private project and hosted private repo. This repo careated to view code publicly)
 
 First choose the project topic. The topics are from REST API lecture.
 
