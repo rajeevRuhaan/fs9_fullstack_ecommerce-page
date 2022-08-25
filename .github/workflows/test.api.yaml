@@ -2,10 +2,10 @@ name: test.api
 on:
   push:
     branches:
-      - develop_account_page
+      - develop
   pull_request:
     branches:
-      - develop_account_page
+      - develop
 jobs:
   build:
     runs-on: ubuntu-latest

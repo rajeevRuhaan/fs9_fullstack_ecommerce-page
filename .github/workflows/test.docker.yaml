@@ -2,7 +2,7 @@ name: docker
 on:
   push:
     branches:
-      - develop_account_page
+      - develop
     tags:
       - v*
 jobs:
